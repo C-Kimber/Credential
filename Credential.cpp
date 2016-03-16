@@ -51,7 +51,7 @@ void addName(){
 			string FULLNAME; // Student's name
 			int age = 0;
             double gpa = 0.0;
-            string sex = "";
+            string gender = "";
 
 			cout << "Enter the student\'s full name: ";
 			getline(cin,FULLNAME);
@@ -62,11 +62,11 @@ void addName(){
             cout << "What is your GPA? : ";
             cin >> gpa;
 
-            cout << "What is your sex? : ";
-            cin >> sex;
+            cout << "What is your gender? : ";
+            cin >> gender;
 
 			cout << "Writing student record to disk..." << endl;
-			File << endl << FULLNAME << " " << age << " " << gpa << " " << sex << endl;
+			File << endl << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
 
 			File.close();
 			cout << "Student record written to disk file: applicants.txt " << endl;
@@ -86,7 +86,7 @@ void readName(string FULLNAME){
     	while ( getline (inputFile,line) )
     	{
     		if (line == FULLNAME){
-    			inputFile >> age >> gpa >> sex;
+    			inputFile >> age >> gpa >> gender;
     			inputFile.close();
     		}
     	}
