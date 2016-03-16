@@ -81,20 +81,18 @@ void addName(){
 void readName(string FULLNAME){
 	string line;
     cout << "Reading files... " << endl <<endl;
-	ifstream inputFile("applicants.txt");
-	if (inputFile.is_open()){
-    	while ( getline (inputFile,line) )
-    	{
-    		if (line == FULLNAME){
-    			inputFile >> age >> gpa >> gender;
-    			inputFile.close();
-    		}
-    	}
-
-	cout << "Student's name: " << FULLNAME << endl;
-	}
-
-
+    ifstream myfile ("example.txt");
+    if (myfile.is_open())
+    {
+        while ( getline (myfile,line) )
+        {
+            cout << line << '\n';
+        }
+        myfile.close();
+    }
+    
+    else cout << "Unable to open file";
+    
 }
 
 void createEmployer(){
