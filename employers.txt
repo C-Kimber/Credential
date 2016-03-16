@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Coston Room20
 
 bill bob
@@ -6,4 +5,3 @@ bill bob
 jadon bacon
 
 Wyatt 12345
->>>>>>> origin/master
