@@ -69,7 +69,7 @@ void addName(){
 			File << endl << FULLNAME << " " << age << " " << gpa << " " << sex << endl;
 
 			File.close();
-			cout << "Student record written to disk file: scores.txt" << endl;
+			cout << "Student record written to disk file: applicants.txt " << endl;
 		}
 		else{
 			cout << "next line..";
@@ -80,22 +80,18 @@ void addName(){
 
 void readName(string FULLNAME){
 	string line;
-	float S1, S2, S3;  // Three test scores
-	cout << "Reading student record from disk file: scores.txt" << endl <<endl;
-
+    cout << "Reading files... " << endl <<endl;
 	ifstream inputFile("applicants.txt");
 	if (inputFile.is_open()){
     	while ( getline (inputFile,line) )
     	{
     		if (line == FULLNAME){
-    			inputFile >> S1 >> S2 >>S3;
+    			inputFile >> age >> gpa >> sex;
     			inputFile.close();
     		}
     	}
 
-
-
-	cout << "Student\'s name: " << FULLNAME << endl;
+	cout << "Student's name: " << FULLNAME << endl;
 	}
 
 
