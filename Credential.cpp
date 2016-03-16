@@ -53,7 +53,7 @@ void addName(){
             double gpa = 0.0;
             string sex = "";
 
-			cout << "Enter the student\'s full name: ";
+			cout << "Enter the student's full name: ";
 			getline(cin,FULLNAME);
 
             cout << "What is your age? : ";
@@ -80,10 +80,8 @@ void addName(){
 
 void readName(string FULLNAME){
 	string line;
-	float S1, S2, S3;  // Three test scores
-	cout << "Reading student record from disk file: scores.txt" << endl <<endl;
-
-	ifstream inputFile("applicants.txt");
+	cout << "Reading applicants... " << endl <<endl;
+    ifstream inputFile("applicants.txt");
 	if (inputFile.is_open()){
     	while ( getline (inputFile,line) )
     	{
@@ -95,7 +93,7 @@ void readName(string FULLNAME){
 
 
 
-	cout << "Student\'s name: " << FULLNAME << endl;
+	cout << "Student's name: " << FULLNAME << endl;
 	}
 
 
