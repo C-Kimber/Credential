@@ -101,21 +101,6 @@ void readName(string FULLNAME){
 
 }
 
-
-/*
-string skill1 = "";
-string skill2 = "";
-string skill3 = "";
-cout << "What is a skill you have? : ";
-cin >> skill1; endl;
-
-cout << "What is a skill you have? : ";
-cin >> skill2; endl;
-
-cout << "What is a skill you have? : ";
-cin >> skill3; endl;
-*/
-
 void createEmployer(){
     string line;
 	fstream File("employers.txt");
