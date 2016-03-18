@@ -52,8 +52,15 @@ void addName(){
 			int age = 0;
             double gpa = 0.0;
             string gender = "";
+			//These is the scores for the credentials
+			int score1 = 0;
+			int score2 = 0;
+			int score3 = 0;
+			int score4 = 0;
+			int score5 = 0;
+			int score6 = 0;
 
-			cout << "Enter the student\'s full name: ";
+			cout << "Enter the student's full name: ";
 			getline(cin,FULLNAME);
 
             cout << "What is your age? : ";
@@ -64,7 +71,27 @@ void addName(){
 
             cout << "What is your gender? : ";
             cin >> gender;
-
+			
+			/*cout << "You will now be asked questions rate on scale of (1-5)" << endl;
+			
+			cout << "Mathmatics";
+			cin >> score1;
+			
+			cout << "Science";
+			cin >> score2;
+			
+			cout << "Engineering";
+			cin >> score3;
+			
+			cout << "Construction";
+			cin >> score4;
+			
+			cout << "Problem Solving";
+			cin >> score5;
+			
+			cout << "Social Skills";
+			cin >> score6;
+			*/
 			cout << "Writing student record to disk..." << endl;
 			File << endl << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
 
@@ -81,7 +108,7 @@ void addName(){
 void readName(string FULLNAME){
 	string line;
     cout << "Reading files... " << endl <<endl;
-    ifstream myfile ("example.txt");
+    ifstream myfile ("applicants.txt");
     if (myfile.is_open())
     {
         while ( getline (myfile,line) )
