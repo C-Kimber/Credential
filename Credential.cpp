@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 
 
@@ -5,6 +6,12 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+=======
+#include <algorithm>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+>>>>>>> Stashed changes
 #include <string>
 using namespace std;
 
@@ -12,7 +19,7 @@ void addName();
 void createEmployer();
 void searchEmployer();
 void readName();
-
+void sortFunction();
 int main ()
 {
     string which = "";
@@ -62,7 +69,11 @@ void addName(){
             cout << "What is your GPA? : ";
             cin >> gpa;
 
+<<<<<<< Updated upstream
             cout << "What is your gender? : ";
+=======
+            cout << "What is your Gender? : ";
+>>>>>>> Stashed changes
             cin >> gender;
 
 			cout << "Writing student record to disk..." << endl;
@@ -149,3 +160,68 @@ void searchEmployer(){
 			cout << "Password is incorrect";}
 	
 }
+
+void sortFunction()
+{
+	
+// variables
+int sortingMethod = 0; 
+int x = 0;
+
+
+//user input
+cout << "Would you like to sort by 1: Gender, 2: Age 3: GPA (Please enter 1, 2 or 3): ";
+cin >> sortingMethod;
+
+
+
+
+	//begin of sorting function
+	while (sortingMethod < 4 && sortingMethod > 0)
+	{
+		//Sorting by Gender
+		while(sortingMethod == 1)
+		 {
+
+		cout << "Would you like to sort by males to females?(1) Or females to males?(2): ";
+		cin >> x;
+			if(x <= 2 && x >= 1) 
+			{
+			std::vector<string> first;
+			
+			//men then female sort
+			while(x == 1)
+			{	
+				
+				
+				if(dummyVariable1 == male)
+				{
+				  man + 1;
+				}
+				
+			}
+		
+			//female then men sort
+			while(x == 2)
+			{
+			
+			}	
+			}
+		}
+	
+	}//end of sorting by gender 
+	
+	//Sorting by age
+	while(sortingMethod == 2)
+	{
+		
+	
+	}//End of age sort
+	
+	//sorting by GPA
+	while(sortingMethod == 3)
+	{   
+		
+	}//End of gpa sorting
+}	
+
