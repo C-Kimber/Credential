@@ -186,7 +186,7 @@ cin >> sortingMethod;
 		cout << "Would you like to sort by males to females?(1) Or females to males?(2): ";
 		cin >> x;
 			if(x <= 2 && x >= 1) 
-			{
+			
 			std::vector<string> first;
 			
 			//men then female sort
@@ -196,7 +196,7 @@ cin >> sortingMethod;
 				
 				if(dummyVariable1 == male)
 				{
-				  man + 1;
+				  
 				}
 				
 			}
