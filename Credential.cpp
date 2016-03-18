@@ -5,33 +5,53 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
+#include <algorithm> 
 #include <string>
 using namespace std;
 
 void addName();
 void createEmployer();
-void searchEmployer();
+int searchEmployer();
 void readName();
 
 int main ()
 {
     string which = "";
     string newOr = "";
+	string sor= "";
 
 	cout << "Are you an employer, or an applicant? ";
 	cin >> which;
-	if(which == "employer" || which == "Employer"){
+	
+	
+	if(which == "employer"){
 
 	    cout << "New or existing employer? ";
 	    cin >> newOr;
-	    if (newOr == "new" || newOr == "New"){
+	    if (newOr== "new"){
 	        createEmployer();
 	    }
 	    else{
-	        searchEmployer();
+	        if (searchEmployer() == 1){
+				cout << "You can now read applicants"<<endl;
+				cout << "Do you want to sort or read?";
+				cin >> sor;
+				if(sor == "sort"){ 
+				cout << "Sorting";
+				
+				}else if (sor == "read"){
+					cout << "reading";
+				}
+	
 	        }
-
+			else{
+				cout << "Sorry, You are not authorized to read applicants";
+			}
 	   }
+	}
+	else if(which == "applicant"){
+		addName();
+	}
 	else{
 	    cout << "Sorry, That is not an option.";
 	    }
@@ -136,7 +156,7 @@ void createEmployer(){
 	}File.close();
 }
 
-void searchEmployer(){
+int searchEmployer(){
     string line;
 	string s;
 	ifstream File("employers.txt");
@@ -155,7 +175,9 @@ void searchEmployer(){
 	cin >> USERNAME;
 	size_t userfound = s.find(USERNAME);
 	if (userfound==string::npos){
-		cout <<"No User by that name";}
+		cout <<"No User by that name";
+		return 0;
+		}
 	else{
 		
 		cout << "User found"<<endl;
@@ -163,10 +185,16 @@ void searchEmployer(){
 		cin >> PASSWORD;
 		size_t passfound = s.find(PASSWORD);
 		
-		if (passfound!=string::npos)
+		if (passfound!=string::npos){
 			cout << "Password is correct";
+			return 1;
 		
-		else
-			cout << "Password is incorrect";}
+		}else{
+			cout << "Password is incorrect";
+			return 0;}
+			
+	}
 	
 }
+
+
