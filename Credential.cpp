@@ -72,7 +72,14 @@ void addName(){
 			int age = 0;
             double gpa = 0.0;
             string sex = "";
-
+    		//These are the scores for the credentials
+            int score1 = 0;
+            int score2 = 0;
+            int score3 = 0;
+            int score4 = 0;
+            int score5 = 0;
+            int score6 = 0;
+            
 			cout << "Enter the student\'s full name: ";
 			getline(cin,FULLNAME);
 
@@ -84,6 +91,28 @@ void addName(){
 
             cout << "What is your sex? : ";
             cin >> sex;
+            
+    		/*	
+            cout << "You will now be asked questions rate on scale of (1-5)" << endl;
+	
+			cout << "Mathmatics";
+	    	cin >> score1;
+		
+	    	cout << "Science";
+	    	cin >> score2;
+			
+			cout << "Engineering";
+			cin >> score3;
+			
+			cout << "Construction";
+			cin >> score4;
+			
+			cout << "Problem Solving";
+			cin >> score5;
+			
+			cout << "Social Skills";
+			cin >> score6;
+            */
 
 			cout << "Writing student record to disk..." << endl;
 			File << endl << FULLNAME << " " << age << " " << gpa << " " << sex << endl;
@@ -92,7 +121,7 @@ void addName(){
 			cout << "Student record written to disk file: scores.txt" << endl;
 		}
 		else{
-			cout << "next line..";
+    		cout << "next line..";
 		}
 	}
 	}
@@ -120,21 +149,6 @@ void readName(string FULLNAME){
 
 
 }
-
-
-/*
-string skill1 = "";
-string skill2 = "";
-string skill3 = "";
-cout << "What is a skill you have? : ";
-cin >> skill1; endl;
-
-cout << "What is a skill you have? : ";
-cin >> skill2; endl;
-
-cout << "What is a skill you have? : ";
-cin >> skill3; endl;
-*/
 
 void createEmployer(){
     string line;
@@ -186,7 +200,7 @@ int searchEmployer(){
 		size_t passfound = s.find(PASSWORD);
 		
 		if (passfound!=string::npos){
-			cout << "Password is correct";
+			cout << "Password is correct"<<endl;
 			return 1;
 		
 		}else{
