@@ -1,6 +1,3 @@
-
-
-
 #include <algorithm>
 #include <fstream>
 #include <iomanip>
