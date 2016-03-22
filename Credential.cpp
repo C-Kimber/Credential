@@ -133,24 +133,11 @@ void addName(){
 
 void readName(string FULLNAME){
 	string line;
-	float S1, S2, S3;  // Three test scores
-	cout << "Reading student record from disk file: scores.txt" << endl <<endl;
-
-	ifstream inputFile("applicants.txt");
-	if (inputFile.is_open()){
-    	while ( getline (inputFile,line) )
-    	{
-    		if (line == FULLNAME){
-    			inputFile >> S1 >> S2 >>S3;
-    			inputFile.close();
-    		}
+	fstream File("employers.txt");
+	if (File.is_open()){
+    	while ( getline (File,line) )
     	}
-
-
-
-	cout << "Student\'s name: " << FULLNAME << endl;
-	}
-
+	}File.close();
 
 }
 
