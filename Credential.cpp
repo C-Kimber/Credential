@@ -63,6 +63,7 @@ int main ()
 
 
 void addName(){
+	
 	string line;
 	fstream File("applicants.txt");
 	if (File.is_open()){
@@ -71,7 +72,7 @@ void addName(){
 			string FULLNAME; // Student's name
 			int age = 0;
             double gpa = 0.0;
-            string sex = "";
+            string gender = "";
     		//These are the scores for the credentials
             int score1 = 0;
             int score2 = 0;
@@ -80,7 +81,7 @@ void addName(){
             int score5 = 0;
             int score6 = 0;
             
-			cout << "Enter the student\'s full name: ";
+			cout << "Enter the student's full name: ";
 			getline(cin,FULLNAME);
 
             cout << "What is your age? : ";
@@ -89,8 +90,8 @@ void addName(){
             cout << "What is your GPA? : ";
             cin >> gpa;
 
-            cout << "What is your sex? : ";
-            cin >> sex;
+            cout << "What is your gender? : ";
+            cin >> gender;
             
     		/*	
             cout << "You will now be asked questions rate on scale of (1-5)" << endl;
@@ -115,10 +116,10 @@ void addName(){
             */
 
 			cout << "Writing student record to disk..." << endl;
-			File << endl << FULLNAME << " " << age << " " << gpa << " " << sex << endl;
+			File << endl << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
 
 			File.close();
-			cout << "Student record written to disk file: scores.txt" << endl;
+			cout << "Student record written to disk file: applicants.txt" << endl;
 		}
 		else{
     		cout << "next line..";
