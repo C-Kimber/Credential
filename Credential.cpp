@@ -74,7 +74,7 @@ void addName(){
 	if (File.is_open()){
 	while ( getline (File,line) ){
 		if (line == " "){
-			string FULLNAME; // Student's name
+			string FULLNAME = ""; // Student's name
 			int age = 0;
             double gpa = 0.0;
             string gender = "";
@@ -87,6 +87,7 @@ void addName(){
             int score6 = 0;
             
 			cout << "Enter the student's full name: ";
+			cin >> FULLNAME;
 			getline(cin,FULLNAME);
 
             cout << "What is your age? : ";
@@ -101,22 +102,22 @@ void addName(){
     		/*	
             cout << "You will now be asked questions rate on scale of (1-5)" << endl;
 	
-			cout << "Mathmatics";
+			cout << "Mathmatics ";
 	    	cin >> score1;
 		
-	    	cout << "Science";
+	    	cout << "Science ";
 	    	cin >> score2;
 			
-			cout << "Engineering";
+			cout << "Engineering ";
 			cin >> score3;
 			
-			cout << "Construction";
+			cout << "Construction ";
 			cin >> score4;
 			
-			cout << "Problem Solving";
+			cout << "Problem Solving ";
 			cin >> score5;
 			
-			cout << "Social Skills";
+			cout << "Social Skills ";
 			cin >> score6;
             */
 
