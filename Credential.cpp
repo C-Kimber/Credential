@@ -7,12 +7,15 @@
 #include <iostream>
 #include <algorithm> 
 #include <string>
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 void addName();
 void createEmployer();
 int searchEmployer();
 void readName();
+void sortFunction();
 
 int main ()
 {
@@ -38,6 +41,8 @@ int main ()
 				cin >> sor;
 				if(sor == "sort"){ 
 				cout << "Sorting";
+				
+				
 				
 				}else if (sor == "read"){
 					cout << "reading";
@@ -209,6 +214,57 @@ int searchEmployer(){
 			
 	}
 	
+}
+void sortFunction()
+{
+// variables
+	int sortingMethod = 0;
+	int x = 0;
+	
+	//user input
+	cout << "Would you like to sort by 1: Gender, 2: Age 3: GPA (Please enter 1, 2 or 3): ";
+	cin >> sortingMethod;
+	
+	//begin of sorting function
+	while (sortingMethod < 4 && sortingMethod > 0)
+	{
+		//Sorting by Gender
+		while(sortingMethod == 1)
+		{
+			
+			cout << "Would you like to sort by males to females?(1) Or females to males?(2): ";
+			cin >> x;
+			if(x <= 2 && x >= 1)
+			{
+				
+				//men then female sort
+				while(x == 1)
+				{
+					
+				}
+				
+				//female then men sort
+				while(x == 2)
+				{
+					
+				}	
+			}
+		}
+		
+	}//end of sorting by gender 
+	
+	//Sorting by age
+	while(sortingMethod == 2)
+	{
+		
+		
+	}//End of age sort
+	
+	//sorting by GPA
+	while(sortingMethod == 3)
+	{   
+		
+	}//End of gpa sorting
 }
 
 
