@@ -14,14 +14,14 @@ void addName();
 void createEmployer();
 int searchEmployer();
 vector<string> readName();
-void sortFunction();
+void sortF(vector<string> myvector);
 void writeFile(vector<string> info);
 
 int main ()
 {
 	vector<string> i = readName();
 	copy(i.begin(), i.end(), ostream_iterator<string>(cout, ""));
-/*
+
     string which = "";
     string newOr = "";
 	string sor= "";
@@ -44,7 +44,8 @@ int main ()
 				cin >> sor;
 				if(sor == "sort"){ 
 				cout << "Sorting";
-				
+				vector<string> myvector = readName();
+				sortF(myvector);
 				
 				
 				}else if (sor == "read"){
@@ -66,7 +67,7 @@ int main ()
 
 
 
- return 0; */
+ return 0; 
 }
 
 
@@ -182,7 +183,7 @@ int searchEmployer(){
 	}
 	
 }
-void sortFunction()
+void sortF(vector<string> myvector)
 {
 // variables
 	int sortingMethod = 0;
@@ -223,8 +224,26 @@ void sortFunction()
 	//Sorting by age
 	while(sortingMethod == 2)
 	{
-		
-		
+		int y = 0;
+		cout << "Would you like to sort by oldest to youngest?(1) Or youngest to oldest?(2): ";
+		cin >> y;
+			if(y > 0 && y < 3) {
+				while(y == 1)//sorting by oldest to youngest
+				{
+					
+				//std::reverse(myvector.begin(),myvector.end());
+				}
+				while(y == 2)//sorting by youngest to oldest
+				{
+				// std::sort (myvector.begin(), myvector.begin()+4);
+				 //std::sort (myvector.begin()+4, myvector.end(), myfunction);
+				 //std::sort (myvector.begin(), myvector.end(), myobject);
+				}
+				
+				}
+			else {
+				cout << "Sorry invalid input.";
+			}
 	}//End of age sort
 	
 	//sorting by GPA
