@@ -37,7 +37,7 @@ int main ()
 	    else{
 	        if (searchEmployer() == 1){
 				cout << "You can now read applicants"<<endl;
-				cout << "Do you want to sort or read?";
+				cout << "Do you want to sort or read? ";
 				cin >> sor;
 				if(sor == "sort"){ 
 				cout << "Sorting";
