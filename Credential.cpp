@@ -74,13 +74,17 @@ void addName(){
 	if (File.is_open()){
 	while ( getline (File,line) ){
 
-			string FULLNAME = ""; // Student's name
+			string first = ""; // Student's name
+			string last = "";
 			string age = "";
             string gpa = "";
             string gender = "";
             
-			cout << "Enter the student's full name: ";
-			getline(cin,FULLNAME);
+			cout << "Enter the student's first name: ";
+			cin >> first;
+			
+			cout << "Enter the student's last name: ";
+			cin >> last;
 
             cout << "What is your age? : ";
             cin >> age;
@@ -93,8 +97,7 @@ void addName(){
             
 
 			cout << "Writing student record to disk..." << endl;
-			File << endl << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
-cout << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
+			File << endl << first << " " << last << " " << age << " " << gpa << " " << gender << endl;
 			
 			cout << "Student record written to disk file: applicants.txt" << endl;
 	}
