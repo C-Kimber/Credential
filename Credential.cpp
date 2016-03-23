@@ -13,12 +13,15 @@ using namespace std;
 void addName();
 void createEmployer();
 int searchEmployer();
-void readName();
+vector<string> readName();
 void sortFunction();
 void writeFile(vector<string> info);
 
 int main ()
 {
+	vector<string> i = readName();
+	copy(i.begin(), i.end(), ostream_iterator<string>(cout, ""));
+/*
     string which = "";
     string newOr = "";
 	string sor= "";
@@ -63,7 +66,7 @@ int main ()
 
 
 
- return 0;
+ return 0; */
 }
 
 
@@ -104,12 +107,17 @@ void addName(){
 	}File.close();
 }
 
-void readName(string FULLNAME){
+vector<string> readName(){
 	string line;
-	fstream File("employers.txt");
+	vector<string> info;
+	fstream File("applicants.txt");
 	if (File.is_open()){
     	while ( getline (File,line) ){
+	if (line != "*****"){
+	info.push_back(string(line));
+	}
     	}
+	return info;
 	}File.close();
 
 }
