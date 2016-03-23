@@ -1,11 +1,13 @@
-#include <algorithm>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
 #include <algorithm> 
 #include <string>
-#include <algorithm>
 #include <vector>
+#include <list>
+#include <fstream>
+#include <iterator>
+
 using namespace std;
 
 void addName();
@@ -13,6 +15,7 @@ void createEmployer();
 int searchEmployer();
 void readName();
 void sortFunction();
+void writeFile(vector<string> info);
 
 int main ()
 {
@@ -252,5 +255,18 @@ void sortFunction()
 		
 	}//End of gpa sorting
 }
+
+
+
+
+void writeFile(vector<string> info){
+		//Shows User that program is writing
+		cout << "Writing sorted applicants to disk..." << endl;
+		//Writes vector to file
+    	std::ofstream output_file("applicants.txt");
+		std::ostream_iterator<std::string> output_iterator(output_file, " ");
+		std::copy(info.begin(), info.end(), output_iterator);
+}
+
 
 
