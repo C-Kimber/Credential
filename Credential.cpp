@@ -138,7 +138,7 @@ void readName(string FULLNAME){
 	string line;
 	fstream File("employers.txt");
 	if (File.is_open()){
-    	while ( getline (File,line) )
+    	while ( getline (File,line) ){
     	}
 	}File.close();
 
@@ -268,5 +268,9 @@ void writeFile(vector<string> info){
 		std::copy(info.begin(), info.end(), output_iterator);
 }
 
+void displayFile(vector<string> info){
+	copy(info.begin(), info.end(), ostream_iterator<string>(cout, " "));
+	
+}
 
 
