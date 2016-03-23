@@ -19,7 +19,6 @@ void writeFile(vector<string> info);
 
 int main ()
 {
-	addName();/*
     string which = "";
     string newOr = "";
 	string sor= "";
@@ -63,7 +62,7 @@ int main ()
 	    }
 
 
-*/
+
  return 0;
 }
 
@@ -101,7 +100,7 @@ cout << FULLNAME << " " << age << " " << gpa << " " << gender << endl;
 	}
 	}File.close();
 }
-/*
+
 void readName(string FULLNAME){
 	string line;
 	fstream File("employers.txt");
@@ -111,7 +110,7 @@ void readName(string FULLNAME){
 	}File.close();
 
 }
-*/
+
 void createEmployer(){
     string line;
 	fstream File("employers.txt");
