@@ -1,3 +1,8 @@
+/*
+Credential Checker
+3/24/16
+Created by: Taylor Kimber, Austin Glenn, Wyatt Giles, and Jaden Ackroyd
+*/
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -5,7 +10,6 @@
 #include <string>
 #include <vector>
 #include <list>
-#include <fstream>
 #include <iterator>
 
 using namespace std;
@@ -22,7 +26,7 @@ int main ()
 	
     string which = "";
     string newOr = "";
-	string sor= "";
+    string sor= "";
 
 	cout << "Are you an employer(special code), or an applicant(applicant)? ";
 	cin >> which;
@@ -85,37 +89,37 @@ void addName(){
 	if (File.is_open()){
 	while ( getline (File,line) ){
 
-			string first = ""; // Student's name
-			string last = "";
-			string age = "";
-            string gpa = "";
-            string gender = "";
-			string email = "";
+		string first = ""; // Student's name
+		string last = "";
+		string age = "";
+            	string gpa = "";
+            	string gender = "";
+		string email = "";
             
-			cout << "Enter the student's first name: ";
+		cout << "Enter the student's first name: ";
 			cin >> first;
 			
-			cout << "Enter the student's last name: ";
-			cin >> last;
+		cout << "Enter the student's last name: ";
+		cin >> last;
 			
-			cout << "What is your Email? :";
-			cin >> email;
+		cout << "What is your Email? :";
+		cin >> email;
 
-            cout << "What is your age? : ";
-            cin >> age;
+            	cout << "What is your age? : ";
+            	cin >> age;
 
-            cout << "What is your GPA? : ";
-            cin >> gpa;
+            	cout << "What is your GPA? : ";
+            	cin >> gpa;
 
-            cout << "What is your gender? : ";
-            cin >> gender;
+            	cout << "What is your gender? : ";
+            		cin >> gender;
             
 
-			cout << "Writing student record to disk..." << endl;
-			File << " " << endl << first << " " << last << " " <<email <<" " << age << " " << gpa << " " << gender << endl << " " ;
+		cout << "Writing student record to disk..." << endl;
+		File << " " << endl << first << " " << last << " " <<email <<" " << age << " " << gpa << " " << gender << endl << " " ;
 			
 			
-			cout << "Student record written to disk file: applicants.txt" << endl;
+		cout << "Student record written to disk file: applicants.txt" << endl;
 	}
 	}File.close();
 }
@@ -125,9 +129,9 @@ vector<string> readName(){
 	vector<string> info;
 	fstream File("applicants.txt");
 	if (File.is_open()){
-    	while ( getline (File,line) ){
-	if (line != "*****" && line != " "){
-	info.push_back(string(line));
+    		while ( getline (File,line) ){
+			if (line != "*****" && line != " "){
+			info.push_back(string(line));
 	}
 	else{
 		info.push_back(string("\n"));
