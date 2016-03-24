@@ -19,18 +19,16 @@ void writeFile(vector<string> info);
 
 int main ()
 {
-	vector<string> i = readName();
-	copy(i.begin(), i.end(), ostream_iterator<string>(cout, ""));
-
+	
     string which = "";
     string newOr = "";
 	string sor= "";
 
-	cout << "Are you an employer, or an applicant? ";
+	cout << "Are you an employer(special code), or an applicant(applicant)? ";
 	cin >> which;
 	
 	
-	if(which == "employer"){
+	if(which == "Room20"){
 
 	    cout << "New or existing employer? ";
 	    cin >> newOr;
@@ -40,16 +38,25 @@ int main ()
 	    else{
 	        if (searchEmployer() == 1){
 				cout << "You can now read applicants"<<endl;
-				cout << "Do you want to sort or read? ";
+				cout << "Do you want to read? ";
 				cin >> sor;
-				if(sor == "sort"){ 
+				if(sor =="no"){
+					cout <<"Ending program ";
+				}
+				/*if(sor == "sort"){ 
 				cout << "Sorting";
 				vector<string> myvector = readName();
-				sortF(myvector);
+				sortF(myvector);*/
 				
 				
-				}else if (sor == "read"){
-					cout << "reading";
+				else if (sor == "yes"){
+					vector<string> i = readName();
+					cout << "| FirstName, LastName, Email, Age, GPA, Gender |"<<endl;
+					cout << "----------------------------------------------"<<endl;
+					copy(i.begin(), i.end(), ostream_iterator<string>(cout, ""));
+				}
+				else{
+					cout << "Ending program ";
 				}
 	
 	        }
@@ -83,12 +90,16 @@ void addName(){
 			string age = "";
             string gpa = "";
             string gender = "";
+			string email = "";
             
 			cout << "Enter the student's first name: ";
 			cin >> first;
 			
 			cout << "Enter the student's last name: ";
 			cin >> last;
+			
+			cout << "What is your Email? :";
+			cin >> email;
 
             cout << "What is your age? : ";
             cin >> age;
@@ -101,7 +112,8 @@ void addName(){
             
 
 			cout << "Writing student record to disk..." << endl;
-			File << endl << first << " " << last << " " << age << " " << gpa << " " << gender << endl;
+			File << " " << endl << first << " " << last << " " <<email <<" " << age << " " << gpa << " " << gender << endl << " " ;
+			
 			
 			cout << "Student record written to disk file: applicants.txt" << endl;
 	}
@@ -114,8 +126,11 @@ vector<string> readName(){
 	fstream File("applicants.txt");
 	if (File.is_open()){
     	while ( getline (File,line) ){
-	if (line != "*****"){
+	if (line != "*****" && line != " "){
 	info.push_back(string(line));
+	}
+	else{
+		info.push_back(string("\n"));
 	}
     	}
 	return info;
@@ -149,7 +164,9 @@ int searchEmployer(){
 	ifstream File("employers.txt");
 	if (File.is_open()){
     	while ( getline (File,line) ){
-			s += line +  '\n';
+			if(line != "*****"){
+					s += line +  '\n';
+			}
     	}
 	File.close();
 	}
@@ -162,7 +179,7 @@ int searchEmployer(){
 	cin >> USERNAME;
 	size_t userfound = s.find(USERNAME);
 	if (userfound==string::npos){
-		cout <<"No User by that name";
+		cout <<"No User by that name." <<endl;
 		return 0;
 		}
 	else{
