@@ -92,12 +92,12 @@ void addName(){
 		string first = ""; // Student's name
 		string last = "";
 		string age = "";
-            	string gpa = "";
-            	string gender = "";
+        string gpa = "";
+        string gender = "";
 		string email = "";
             
 		cout << "Enter the student's first name: ";
-			cin >> first;
+		cin >> first;
 			
 		cout << "Enter the student's last name: ";
 		cin >> last;
@@ -105,19 +105,17 @@ void addName(){
 		cout << "What is your Email? :";
 		cin >> email;
 
-            	cout << "What is your age? : ";
-            	cin >> age;
+        cout << "What is your age? : ";
+        cin >> age;
 
-            	cout << "What is your GPA? : ";
-            	cin >> gpa;
+        cout << "What is your GPA? : ";
+        cin >> gpa;
 
-            	cout << "What is your gender? : ";
-            		cin >> gender;
+        cout << "What is your gender? : ";
+        cin >> gender;
             
-
 		cout << "Writing student record to disk..." << endl;
 		File << " " << endl << first << " " << last << " " <<email <<" " << age << " " << gpa << " " << gender << endl << " " ;
-			
 			
 		cout << "Student record written to disk file: applicants.txt" << endl;
 	}
@@ -139,7 +137,7 @@ vector<string> readName(){
     	}
 	return info;
 	}File.close();
-
+	
 }
 
 void createEmployer(){
