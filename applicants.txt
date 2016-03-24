@@ -1,1 +1,9 @@
 *****
+ 
+Hip Guy coolstuff@aol.com 15 3.5 Male
+ 
+Joe Biden joeisthebest@aol.com 45 4.0 Male
+ 
+Hillary Clinton clinton.hillary@aol.com 55 3.8 Female
+ 
+super duper pooperscooper@aol.com 100 1.0 N/A
