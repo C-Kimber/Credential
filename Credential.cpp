@@ -198,7 +198,7 @@ int searchEmployer(){
 			return 1;
 		
 		}else{
-			cout << "Password is incorrect";
+			cout << "Password is incorrect ";
 			return 0;}
 			
 	}
